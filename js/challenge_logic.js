@@ -1,4 +1,4 @@
-// Add console.log to check to see if our code is working.
+// Add console.log to check to see if our code is working.python -m http.server
 console.log("working");
 
 // We create the tile layer that will be the background of our map.
@@ -113,7 +113,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
      // We create a popup for each circleMarker to display the magnitude and location of the earthquake
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
-      layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+      layer.bindPopup("Date: " + new Date(feature.properties.time).toLocaleString() + "<br>Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     }
   }).addTo(allEarthquakes);
 
